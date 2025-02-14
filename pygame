@@ -1,0 +1,33 @@
+# Importing the Pygame library and relevant modules
+import pygame as pg  # Import Pygame and give it an alias "pg" for convenience
+from pygame.locals import *  # Import all Pygame constants like QUIT
+
+# Initialize Pygame
+pg.init()  # This initializes all Pygame modules required for the game (graphics, sounds, etc.)
+
+# Create a game window (screen)
+screen = pg.display.set_mode((640, 480))  
+# This creates a window of size 640 pixels wide and 480 pixels high.
+# The "screen" object represents the display surface where everything will be drawn.
+
+# Set the title of the game window
+pg.display.set_caption("Pygame Test")  
+# This sets the title of the window to "Pygame Test" which appears in the title bar.
+
+# Main game loop (infinite loop)
+while True:  
+    # This loop runs continuously until the game is closed.
+    
+    # Handle events (such as key presses, mouse clicks, etc.)
+    for event in pg.event.get():  
+        # This retrieves all the events that Pygame has detected (e.g., closing the window).
+        
+        if event.type == QUIT:  
+            # If the user clicks the close button (X), the event type will be QUIT.
+
+            pg.quit()  # This uninitializes Pygame, properly closing the game window.
+            exit()  # This exits the program to stop execution.
+
+    # Update the display to reflect any changes
+    pg.display.update()  
+    # This refreshes the screen, making sure any updates (drawings, movements, etc.) appear.
